@@ -4,9 +4,10 @@
 
 # I Think, Therefore I Diffuse: Enabling Multimodal In-Context Reasoning in Diffusion Models
 
-[Zhenxing Mi](https://mizhenxing.github.io), [Kuan-Chieh Wang](https://wangkua1.github.io), [Guocheng Qian](https://guochengqian.github.io), [Hanrong Ye](https://sites.google.com/site/yhrspace), [Runtao Liu](https://github.com/rt219), [Sergey Tulyakov](https://stulyakov.com), [Kfir Aberman](https://kfiraberman.github.io), [Dan Xu](https://www.danxurgb.net)  
+[Zhenxing Mi$^1$](https://mizhenxing.github.io), [Kuan-Chieh Wang$^2$](https://wangkua1.github.io), [Guocheng Qian$^2$](https://guochengqian.github.io), [Hanrong Ye$^1$](https://sites.google.com/site/yhrspace), [Runtao Liu$^1$](https://github.com/rt219), [Sergey Tulyakov$^2$](https://stulyakov.com), [Kfir Aberman$^2$](https://kfiraberman.github.io), [Dan Xu$^1$](https://www.danxurgb.net)  
 
 
+$^1$HKUST, $^2$Snap Inc.
 
 ### [Arxiv](https://arxiv.org/abs/) | [Project Page](https://mizhenxing.github.io/ThinkDiff)
 
