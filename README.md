@@ -7,7 +7,7 @@
 [Zhenxing Mi](https://mizhenxing.github.io)$^1$, [Kuan-Chieh Wang](https://wangkua1.github.io)$^2$, [Guocheng Qian](https://guochengqian.github.io)$^2$, [Hanrong Ye](https://sites.google.com/site/yhrspace)$^1$, [Runtao Liu](https://github.com/rt219)$^1$, [Sergey Tulyakov](https://stulyakov.com)$^2$, [Kfir Aberman](https://kfiraberman.github.io)$^2$, [Dan Xu](https://www.danxurgb.net)$^1$
 
 
-$^1\text{HKUST}$, $^2$Snap Inc.
+$^1\text{HKUST}$, $^2\text{Snap Inc.}$
 
 ### [Arxiv](https://arxiv.org/abs/) | [Project Page](https://mizhenxing.github.io/ThinkDiff)
 
