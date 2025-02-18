@@ -27,7 +27,7 @@ This paper presents **ThinkDiff**, a novel alignment paradigm that enables multi
 
 ### 🌟Single image + text for video
 
-[🌟Click here🌟](https://mizhenxing.github.io/ThinkDiff/#for_video)
+[🌟Click here🌟 for the videos!](https://mizhenxing.github.io/ThinkDiff/#for_video)
 
 ![](media/video_shot.png)
 
