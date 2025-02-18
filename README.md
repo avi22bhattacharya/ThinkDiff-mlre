@@ -9,7 +9,7 @@
 
 $^1\text{HKUST}$, $^2\text{Snap Inc.}$
 
-### [Arxiv](https://arxiv.org/abs/) | [Project Page](https://mizhenxing.github.io/ThinkDiff)
+### [Arxiv](https://arxiv.org/abs/2502.10458) | [Project Page](https://mizhenxing.github.io/ThinkDiff)
 
 ## Introduction
 
@@ -24,7 +24,7 @@ This paper presents **ThinkDiff**, a novel alignment paradigm that enables multi
 @article{mi2025thinkdiff,
   title={I Think, Therefore I Diffuse: Enabling Multimodal In-Context Reasoning in Diffusion Models},
   author={Mi, Zhenxing and Wang, Kuan-Chieh and Qian, Guocheng and Ye, Hanrong and Liu, Runtao and Tulyakov, Sergey and Aberman, Kfir and Xu, Dan},
-  journal={arXiv preprint arXiv:},
+  journal={arXiv preprint arXiv:2502.10458},
   year={2025}
 }
 ```
