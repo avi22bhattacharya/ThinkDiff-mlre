@@ -14,13 +14,13 @@ $^1\text{HKUST}$, $^2\text{Snap Inc.}$
 ## Introduction
 
 
-![](media/teaser_arxiv.png)
+![](media/teaser_arxiv.jpg)
 
 This paper presents **ThinkDiff**, a novel alignment paradigm that enables multimodal in-context understanding and reasoning capabilities in text-to-image diffusion models by integrating the capabilities of vision-language models (VLMs). Directly aligning VLMs with diffusion decoders via diffusion loss requires complex and costly reasoning-based data pairs with multimodal inputs and image outputs. Instead, ThinkDiff leverages vision-language training as a proxy task, aligning VLMs to a large language model (LLM) decoder. This proxy task is feasible because the LLM **decoder** shares the same input feature space as diffusion **decoders** that use the corresponding LLM **encoder** for text embedding. As a result, alignment with diffusion decoders can be achieved by alignment with the LLM decoder. ThinkDiff effectively transfers multimodal in-context understanding and reasoning capabilities from VLMs to diffusion models, eliminating the need for complex reasoning-based multimodal datasets by using only readily available image-text pairs for training. Experiment results demonstrate that ThinkDiff significantly improves performance on the challenging CoBSAT benchmark for multimodal in-context reasoning generation, raising the best accuracy from 19.2% to 46.3%, with only 5 hours of training on 4 A100 GPUs. 
 
 ## 🌟Multimodal in-conetxt reseasoning generation
 
-![](media/appendix_reasoning_shot2_compare.png)
+![](media/appendix_reasoning_shot2_compare.jpg)
 
 
 ## Multimodal in-conetxt composition
@@ -29,19 +29,19 @@ This paper presents **ThinkDiff**, a novel alignment paradigm that enables multi
 
 [🌟Click here🌟 for the videos!](https://mizhenxing.github.io/ThinkDiff/#for_video)
 
-![](media/video_shot.png)
+![](media/video_shot.jpg)
 
 ### 🌟Single image + text
 
-![](media/appendix_multimodal_vision_website.png)
+![](media/appendix_multimodal_vision_website.jpg)
 
 ### 🌟Two images
 
-![](media/appendix_multimodal_vision_only_2I_4_github.png)
+![](media/appendix_multimodal_vision_only_2I_4_github.jpg)
 
 ### 🌟Two images + text
 
-![](media/multimodal_vision_2I_arxiv.png)
+![](media/multimodal_vision_2I_arxiv.jpg)
 
 
 ### More results are in the [Project Page](https://mizhenxing.github.io/ThinkDiff)!
