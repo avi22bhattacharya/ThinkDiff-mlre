@@ -17,7 +17,7 @@ $^1\text{HKUST}$, $^2\text{Snap Inc.}$
 * Aligning VLM to an **LLM** decoder, instead of a **diffusion** decoder.
 * It's based on the finding that the LLM decoder shares the same input space with the diffusion decoder.
 * ThinkDiff-LVLM aligns deep features of LVLM's **generated** tokens, instead of deep features of LVLM's **input** tokens, to the decoders.
-* This transfers the reasoning capabilities to diffusion decoders. (**generated** tokens are answers while **input** tokens are only questions.)
+* This transfers the reasoning capabilities to diffusion decoders. (**Generated** tokens are answers while **input** tokens are only questions.)
 
 ## Introduction
 
