@@ -9,7 +9,7 @@
 
 $^1\text{HKUST}$, $^2\text{Snap Inc.}$
 
-### [Arxiv](https://arxiv.org/abs/2502.10458) | [Project Page](https://mizhenxing.github.io/ThinkDiff) | [Huggingface Paper Page](https://huggingface.co/papers/2502.10458)
+### [Arxiv](https://arxiv.org/abs/2502.10458) | [Huggingface Paper](https://huggingface.co/papers/2502.10458) | [Project Page](https://mizhenxing.github.io/ThinkDiff)
 
 
 ## TL;DR
