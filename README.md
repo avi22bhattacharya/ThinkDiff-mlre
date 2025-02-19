@@ -11,6 +11,14 @@ $^1\text{HKUST}$, $^2\text{Snap Inc.}$
 
 ### [Arxiv](https://arxiv.org/abs/2502.10458) | [Project Page](https://mizhenxing.github.io/ThinkDiff)
 
+
+## TL;DR
+
+* Aligning VLM to a LLM decoder, instead of a diffusion decoder.
+* It's based on the finding that the LLM decoder shares the same input space with the diffusion decoder.
+* Aligning LVLM's generated token, instead of the features of LVLM's input tokens, to the decoders.
+* This transfers the reasoning capabilities to diffusion decoders.
+
 ## Introduction
 
 
