@@ -136,9 +136,9 @@ bash runs/train_thinkdiff_clip.sh
 2. Testing
 
 ```bash
-runs/test_thinkdiff_clip_image_text.sh
-runs/test_thinkdiff_clip_two_images.sh
-runs/test_thinkdiff_clip_video_text.sh
+bash runs/test_thinkdiff_clip_image_text.sh
+bash runs/test_thinkdiff_clip_two_images.sh
+bash runs/test_thinkdiff_clip_video_text.sh
 ```
 
 
