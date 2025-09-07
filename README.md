@@ -150,7 +150,7 @@ More detailed training and testing instructions will be updated soon.
 @article{mi2025thinkdiff,
   title={I Think, Therefore I Diffuse: Enabling Multimodal In-Context Reasoning in Diffusion Models},
   author={Mi, Zhenxing and Wang, Kuan-Chieh and Qian, Guocheng and Ye, Hanrong and Liu, Runtao and Tulyakov, Sergey and Aberman, Kfir and Xu, Dan},
-  journal={arXiv preprint arXiv:2502.10458},
+  journal={ICML},
   year={2025}
 }
 ```
