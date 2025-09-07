@@ -23,7 +23,7 @@ def process_tar_file(tar_path, item_number):
 
 
 # storage = "example_cc_sbu_data/{00000..00002}.tar"
-storage = "/project/visgroup/zmiaa/datasets/minigpt4/cc_sbu/cc_sbu_dataset/{00000..00002}.tar"
+storage = "/your/path/to/cc_sbu/cc_sbu_dataset/{00000..00002}.tar"
 item_number = 3
 output_dir = "minigpt4/configs/datasets/cc_sbu_mllama_vllm_process_wids"
 shard_name = "wids_shards.json"

@@ -96,9 +96,53 @@ Please refer [vLLM for Embedding](https://github.com/MiZhenxing/vllm) for instal
 
 Please download our checkpoints [here](https://huggingface.co/Mifucius/ThinkDiff).
 
-### Training and testing
 
-Detailed training and testing instructions will be updated soon.
+### ThinkDiff-LVLM
+
+1. Data Preprocessing
+
+Generate WIDS JSON list similar to [this](https://storage.googleapis.com/webdataset/fake-imagenet/imagenet-train.json)
+
+```bash
+python scripts/get_wids_input_json_para.py
+```
+
+2. Precompute embeddings
+
+```bash
+bash runs/run_qwen2_vl_embed_ccsbu.sh
+```
+
+3. Training
+
+
+```bash
+bash runs/train_thinkdiff_lvlm_ccsbu.sh
+```
+4. Testing
+
+```bash
+bash runs/test_thinkdiff_lvlm.sh
+```
+
+### ThinkDiff-CLIP
+
+1. Training (No Preprocessing Required)
+
+```bash
+bash runs/train_thinkdiff_clip.sh
+```
+
+2. Testing
+
+```bash
+runs/test_thinkdiff_clip_image_text.sh
+runs/test_thinkdiff_clip_two_images.sh
+runs/test_thinkdiff_clip_video_text.sh
+```
+
+
+More detailed training and testing instructions will be updated soon.
 
 ## Citation
 
