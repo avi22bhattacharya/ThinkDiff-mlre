@@ -1,0 +1,5 @@
+datasets:
+  llava_instruct_mllama_embed_2:
+    data_type: images
+    build_info:
+      storage: ./minigpt4/LLaVA-Instruct-150K/qwen2_vl_7b_llava_generate_v2/{000000..000497}.tar

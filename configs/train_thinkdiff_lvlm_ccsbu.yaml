@@ -1,0 +1,82 @@
+model:
+  arch: mllama-vllm-t5-embed-decoder-2
+  model_type: pretrain_mllama_vllm_t5_embed_decoder_2
+  use_decoder_only_language_model: False
+  mllama_pretrained_model_name_or_path: "Qwen/Qwen2-VL-7B-Instruct"
+  text_pretrained_model_name_or_path: "google/flan-t5-xxl"
+  freeze_mllama: True
+  freeze_language: True
+  dtype: "bfloat16"
+  max_txt_len: 128
+  mm_projector_type: "mlp2x_gelu_t5_norm"
+  layer_norm_reinit_weight_with_language_encoder: True
+  use_random_split: False
+  use_biased_random_split: False
+  t5_tokenizer_add_special_tokens_prob: null
+  use_cross_attention_embedding: False
+  mllama_output_embeddings_drop_rate: null
+  forward_type: "forward_inner"
+  mllama_generated_text_key: "generated_texts"
+  
+
+  vllm_config:
+    max_model_len: 65536
+    max_num_seqs: 32
+    gpu_memory_utilization: 0.6
+    temperature: 0.6
+    top_p: 0.9
+    max_tokens: 64
+    min_tokens: 64
+    ignore_eos: True
+    embedding_layer_name: "model.norm"
+    enforce_eager: False
+
+datasets:
+  llava_instruct_mllama_embed_2:
+    batch_size: 32
+    build_info:
+      storage: /your/path/to/embed/qwen2_vl_embed_ccsbu_debug/{000000..000048}.tar
+      use_input_embed: False
+      use_output_embed: True
+      random_split_output_embed: True
+      output_embed_max_split_len: 128
+
+run:
+  task: image_text_pretrain
+  runner: runner_clip_t5
+  # optimizer
+  lr_sched: "linear_warmup_cosine_lr"
+  init_lr: 1e-4
+  min_lr: 8e-5
+  warmup_lr: 1e-6
+  use_clip_grad_norm: False
+  max_grad_norm: 1.0
+
+  weight_decay: 0.05
+  max_epoch: 40
+  num_workers: 8
+  warmup_steps: 2000
+  iters_per_epoch: 5000
+  # log_freq: 1
+
+  seed: 42
+  output_dir: "./train_thinkdiff_lvlm_debug"
+
+  amp: True
+  amp_dtype: "bfloat16"
+  resume_ckpt_path: null
+
+  find_unused_parameters: False
+
+  evaluate: False 
+  train_splits: ["train"]
+  # valid_splits: ["eval"]
+
+  device: "cuda"
+  world_size: 1
+  dist_url: "env://"
+  distributed: True
+
+  wandb_log: True
+  job_name: train_thinkdiff_lvlm_debug
+  wandb_project_name: train_thinkdiff_lvlm_debug

@@ -9,7 +9,7 @@
 
 $^1\text{HKUST}$, $^2\text{Snap Inc.}$
 
-### [Arxiv](https://arxiv.org/abs/2502.10458) | [Huggingface Paper](https://huggingface.co/papers/2502.10458) | [Project Page](https://mizhenxing.github.io/ThinkDiff)
+### [Arxiv](https://arxiv.org/abs/2502.10458) | [Huggingface Paper](https://huggingface.co/papers/2502.10458) | [Project Page](https://mizhenxing.github.io/ThinkDiff) | [Checkpoints](https://huggingface.co/Mifucius/ThinkDiff) | [vLLM for Embedding](https://github.com/MiZhenxing/vllm)
 
 
 ## TL;DR
@@ -53,6 +53,52 @@ This paper presents **ThinkDiff**, a novel alignment paradigm that enables multi
 
 
 ### More results are in the [Project Page](https://mizhenxing.github.io/ThinkDiff)!
+
+### Dataset
+
+Follow the [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4/blob/main/dataset/README_1_STAGE.md) dataset guidance to download image datasets in WebDataset format.
+
+
+### Environment Setup
+
+1. Create and activate environment
+
+```bash
+conda create -n thinkdiff python==3.9.21 -y
+conda activate thinkdiff
+```
+
+2. Install PyTorch (adjust CUDA version as needed)
+
+```bash
+conda install pytorch==2.0.0 torchvision==0.15.0 torchaudio==2.0.0 pytorch-cuda=11.8 -c pytorch -c nvidia
+```
+
+PyTorch 2.4.0 is also supported
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+If you encounter errors with pyairports, install it manually:
+
+```bash
+pip install git+https://github.com/ozeliger/pyairports.git@dev
+```
+
+Install our modified vLLM:
+
+Please refer [vLLM for Embedding](https://github.com/MiZhenxing/vllm) for install instrcutions.
+
+### Checkpoints
+
+Please download our checkpoints [here](https://huggingface.co/Mifucius/ThinkDiff).
+
+### Training and testing
+
+Detailed training and testing instructions will be updated soon.
 
 ## Citation
 

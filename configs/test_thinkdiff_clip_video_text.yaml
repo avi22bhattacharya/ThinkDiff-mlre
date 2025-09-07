@@ -1,0 +1,94 @@
+model:
+  arch: blip-vision-t5-decoder
+  model_type: pretrain_blip_vision_t5_decoder
+  use_decoder_only_language_model: False
+  blip2_pretrained_model_name_or_path: "Salesforce/blip2-flan-t5-xxl"
+  freeze_vision: True
+  # freeze_qformer: True
+  freeze_language: True
+  # freeze_language_projection: True
+  dtype: "bfloat16"
+  max_txt_len: 32
+  # mm_projector_type: "mlp2x_gelu"
+  mm_projector_type: "mlp2x_gelu_t5_norm"
+  # layer_norm_reinit_weight: 0.1
+  vision_downsample_factor: 2
+  layer_norm_reinit_weight_with_language_encoder: True
+  ckpt: /your/path/to/ckpts/ThinkDiff/release/thinkdiff_clip.pth
+
+datasets:
+  laion:
+    batch_size: 42
+    vis_processor:
+      train:
+        name: "blip2_image_train"
+        image_size: 224
+    text_processor:
+      train:
+        name: "blip_caption"
+    sample_ratio: 115
+  cc_sbu:
+    batch_size: 42
+    vis_processor:
+        train:
+          name: "blip2_image_train"
+          image_size: 224
+    text_processor:
+        train:
+          name: "blip_caption"
+    sample_ratio: 14
+
+evaluation_datasets:
+  football:
+    batch_size: 1
+    vis_processor:
+        eval:
+          name: "blip2_image_eval"
+          image_size: 224
+    text_processor:
+        eval:
+          name: "blip_caption"
+    sample_ratio: 1
+
+run:
+  task: image_text_pretrain
+  runner: runner_clip_t5
+  # optimizer
+  lr_sched: "linear_warmup_cosine_lr"
+  init_lr: 1e-4
+  min_lr: 8e-5
+  warmup_lr: 1e-6
+  use_clip_grad_norm: False
+  max_grad_norm: 1.0
+
+  weight_decay: 0.05
+  max_epoch: 40
+  num_workers: 8
+  warmup_steps: 2000
+  iters_per_epoch: 5000
+
+  seed: 42
+  output_dir: "./test_thinkdiff_clip_video_text"
+
+  amp: True
+  amp_dtype: "bfloat16"
+  find_unused_parameters: False
+
+  evaluate: False 
+  train_splits: ["train"]
+  # valid_splits: ["eval"]
+
+  device: "cuda"
+  world_size: 1
+  dist_url: "env://"
+  distributed: False
+
+  wandb_log: True
+  job_name: test_thinkdiff_clip_video_text
+  wandb_project_name: test_thinkdiff_clip_video_text
+
+  guidance_scale: 3.5
+  flux_height: 1024
+  flux_width: 1024
+  flux_num_inference_steps: 28
+  flux_max_sequence_length: 128

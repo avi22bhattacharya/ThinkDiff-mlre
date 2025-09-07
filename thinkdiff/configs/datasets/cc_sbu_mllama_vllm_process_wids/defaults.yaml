@@ -1,0 +1,5 @@
+datasets:
+  cc_sbu_mllama_vllm_process_wids:
+    data_type: images
+    build_info:
+      storage: minigpt4/configs/datasets/cc_sbu_mllama_vllm_process_wids/wids_shards.json
