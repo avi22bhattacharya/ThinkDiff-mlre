@@ -2,7 +2,7 @@ model:
   arch: mllama-vllm-generate-1
   model_type: pretrain_mllama_vllm_generate_1
   use_decoder_only_language_model: False
-  mllama_pretrained_model_name_or_path: "Qwen/Qwen2-VL-7B-Instruct"
+  mllama_pretrained_model_name_or_path: "Qwen/Qwen2-VL-2B-Instruct"
   text_pretrained_model_name_or_path: "google/flan-t5-xxl"
   freeze_mllama: True
   freeze_language: True
@@ -16,10 +16,10 @@ model:
     max_model_len: 8192
     # max_num_batched_tokens: 737280
     # max_num_batched_tokens: 491520
-    max_num_batched_tokens: 131072
-    max_num_seqs: 2048
+    max_num_batched_tokens: 60000
+    max_num_seqs: 256
     # max_num_seqs: 128
-    gpu_memory_utilization: 0.9
+    gpu_memory_utilization: 0.95
     temperature: 0.6
     top_p: 0.9
     max_tokens: 256
@@ -27,14 +27,14 @@ model:
     ignore_eos: False
     embedding_layer_name: "model.norm"
     enforce_eager: True
-    tensor_parallel_size: 4
+    tensor_parallel_size: 1
     return_hidden_states: True
 
 datasets:
   cc_sbu_mllama_vllm_process_wids:
     batch_size: 8192
     build_info:
-      storage: minigpt4/configs/datasets/cc_sbu_mllama_vllm_process_wids/wids_shards.json
+      storage: thinkdiff/minigpt4/configs/datasets/cc_sbu_mllama_vllm_process_wids/wids_shards.json
 
 run:
   task: image_text_process_data
@@ -46,7 +46,7 @@ run:
   warmup_lr: 1e-6
   use_clip_grad_norm: False
   max_grad_norm: 1.0
-  output_shard_path: ["/your/path/to/qwen2_vl_embed_ccsbu_debug", "%06d.tar", 0]
+  output_shard_path: ["/scratch/eecs498f25s006_class_root/eecs498f25s006_class/avibhatt/ThinkDiff-mlre/debug/qwen2_vl_embed_ccsbu_debug", "%06d.tar", 0]
 
   weight_decay: 0.05
   max_epoch: 40

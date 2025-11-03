@@ -1,0 +1,212 @@
+{
+    "run": {
+        "task": "image_text_process_data",
+        "runner": "runner_process_data",
+        "lr_sched": "linear_warmup_cosine_lr",
+        "init_lr": 0.0001,
+        "min_lr": 8e-05,
+        "warmup_lr": 1e-06,
+        "use_clip_grad_norm": false,
+        "max_grad_norm": 1.0,
+        "output_shard_path": [
+            "/scratch/eecs498f25s006_class_root/eecs498f25s006_class/avibhatt/ThinkDiff-mlre/debug/qwen2_vl_embed_ccsbu_debug",
+            "%06d.tar",
+            0
+        ],
+        "weight_decay": 0.05,
+        "max_epoch": 40,
+        "num_workers": 32,
+        "warmup_steps": 2000,
+        "iters_per_epoch": 5000,
+        "log_freq": 1,
+        "seed": 42,
+        "output_dir": "./run_qwen2_vl_embed_ccsbu_debug",
+        "amp": true,
+        "amp_dtype": "bfloat16",
+        "resume_ckpt_path": null,
+        "find_unused_parameters": false,
+        "evaluate": false,
+        "train_splits": [
+            "train"
+        ],
+        "device": "cuda",
+        "world_size": 1,
+        "dist_url": "env://",
+        "distributed": false,
+        "wandb_log": true,
+        "job_name": "run_qwen2_vl_embed_ccsbu_debug",
+        "wandb_project_name": "run_qwen2_vl_embed_ccsbu_debug"
+    },
+    "model": {
+        "arch": "mllama-vllm-generate-1",
+        "image_size": 224,
+        "drop_path_rate": 0,
+        "use_grad_checkpoint": false,
+        "freeze_vit": true,
+        "freeze_qformer": true,
+        "num_query_token": 32,
+        "prompt": "",
+        "llama_model": "Vision-CAIR/vicuna-7b",
+        "model_type": "pretrain_mllama_vllm_generate_1",
+        "use_decoder_only_language_model": false,
+        "mllama_pretrained_model_name_or_path": "Qwen/Qwen2-VL-7B-Instruct",
+        "text_pretrained_model_name_or_path": "google/flan-t5-xxl",
+        "freeze_mllama": true,
+        "freeze_language": true,
+        "dtype": "bfloat16",
+        "max_txt_len": 256,
+        "mm_projector_type": "mlp2x_gelu_t5_norm",
+        "layer_norm_reinit_weight_with_language_encoder": true,
+        "text_input_key": "answers",
+        "vllm_config": {
+            "max_model_len": 2048,
+            "max_num_batched_tokens": 30000,
+            "max_num_seqs": 128,
+            "gpu_memory_utilization": 0.95,
+            "temperature": 0.6,
+            "top_p": 0.9,
+            "max_tokens": 256,
+            "min_tokens": 1,
+            "ignore_eos": false,
+            "embedding_layer_name": "model.norm",
+            "enforce_eager": true,
+            "tensor_parallel_size": 1,
+            "return_hidden_states": true
+        }
+    },
+    "preprocess": {
+        "vis_processor": {
+            "train": {
+                "name": "blip2_image_train",
+                "image_size": 224
+            },
+            "eval": {
+                "name": "blip2_image_eval",
+                "image_size": 224
+            }
+        },
+        "text_processor": {
+            "train": {
+                "name": "blip_caption"
+            },
+            "eval": {
+                "name": "blip_caption"
+            }
+        }
+    },
+    "datasets": {
+        "cc_sbu_mllama_vllm_process_wids": {
+            "data_type": "images",
+            "build_info": {
+                "storage": "thinkdiff/minigpt4/configs/datasets/cc_sbu_mllama_vllm_process_wids/wids_shards.json"
+            },
+            "batch_size": 8192
+        }
+    }
+}
+{
+    "run": {
+        "task": "image_text_process_data",
+        "runner": "runner_process_data",
+        "lr_sched": "linear_warmup_cosine_lr",
+        "init_lr": 0.0001,
+        "min_lr": 8e-05,
+        "warmup_lr": 1e-06,
+        "use_clip_grad_norm": false,
+        "max_grad_norm": 1.0,
+        "output_shard_path": [
+            "/scratch/eecs498f25s006_class_root/eecs498f25s006_class/avibhatt/ThinkDiff-mlre/debug/qwen2_vl_embed_ccsbu_debug",
+            "%06d.tar",
+            0
+        ],
+        "weight_decay": 0.05,
+        "max_epoch": 40,
+        "num_workers": 32,
+        "warmup_steps": 2000,
+        "iters_per_epoch": 5000,
+        "log_freq": 1,
+        "seed": 42,
+        "output_dir": "./run_qwen2_vl_embed_ccsbu_debug",
+        "amp": true,
+        "amp_dtype": "bfloat16",
+        "resume_ckpt_path": null,
+        "find_unused_parameters": false,
+        "evaluate": false,
+        "train_splits": [
+            "train"
+        ],
+        "device": "cuda",
+        "world_size": 1,
+        "dist_url": "env://",
+        "distributed": false,
+        "wandb_log": true,
+        "job_name": "run_qwen2_vl_embed_ccsbu_debug",
+        "wandb_project_name": "run_qwen2_vl_embed_ccsbu_debug"
+    },
+    "model": {
+        "arch": "mllama-vllm-generate-1",
+        "image_size": 224,
+        "drop_path_rate": 0,
+        "use_grad_checkpoint": false,
+        "freeze_vit": true,
+        "freeze_qformer": true,
+        "num_query_token": 32,
+        "prompt": "",
+        "llama_model": "Vision-CAIR/vicuna-7b",
+        "model_type": "pretrain_mllama_vllm_generate_1",
+        "use_decoder_only_language_model": false,
+        "mllama_pretrained_model_name_or_path": "Qwen/Qwen2-VL-7B-Instruct",
+        "text_pretrained_model_name_or_path": "google/flan-t5-xxl",
+        "freeze_mllama": true,
+        "freeze_language": true,
+        "dtype": "bfloat16",
+        "max_txt_len": 256,
+        "mm_projector_type": "mlp2x_gelu_t5_norm",
+        "layer_norm_reinit_weight_with_language_encoder": true,
+        "text_input_key": "answers",
+        "vllm_config": {
+            "max_model_len": 8192,
+            "max_num_batched_tokens": 30000,
+            "max_num_seqs": 128,
+            "gpu_memory_utilization": 0.95,
+            "temperature": 0.6,
+            "top_p": 0.9,
+            "max_tokens": 256,
+            "min_tokens": 1,
+            "ignore_eos": false,
+            "embedding_layer_name": "model.norm",
+            "enforce_eager": true,
+            "tensor_parallel_size": 1,
+            "return_hidden_states": true
+        }
+    },
+    "preprocess": {
+        "vis_processor": {
+            "train": {
+                "name": "blip2_image_train",
+                "image_size": 224
+            },
+            "eval": {
+                "name": "blip2_image_eval",
+                "image_size": 224
+            }
+        },
+        "text_processor": {
+            "train": {
+                "name": "blip_caption"
+            },
+            "eval": {
+                "name": "blip_caption"
+            }
+        }
+    },
+    "datasets": {
+        "cc_sbu_mllama_vllm_process_wids": {
+            "data_type": "images",
+            "build_info": {
+                "storage": "thinkdiff/minigpt4/configs/datasets/cc_sbu_mllama_vllm_process_wids/wids_shards.json"
+            },
+            "batch_size": 8192
+        }
+    }
+}

@@ -154,3 +154,7 @@ More detailed training and testing instructions will be updated soon.
   year={2025}
 }
 ```
+
+Changes to generate embeddings (step 2):
+1. Comment Laion Dataset references: The code in thinkdiff.datasets.dataset references a LaionDataset class that does not exist (writers probably forgot to commit or did not use this in their paper) so we had to comments out all references to it.
+2. Changed config and bash files to reflect the update the correct paths and config files being used for ex. changing to 1 GPU, changing directory paths, etc.
